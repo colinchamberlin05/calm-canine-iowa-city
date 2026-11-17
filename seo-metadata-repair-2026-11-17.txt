@@ -1,0 +1,20 @@
+D3 technical site-maintenance note
+Recorded 2026-11-17 19:24:01 UTC.
+
+After 20 responses were recorded and before trial 021, version B's HTML title and meta description were made unique to satisfy the final-site requirement. The original B duplicated A's two head fields.
+
+New B title: First Daycare Visit for Anxious Dogs | Calm Canine Iowa City
+New B description: Explore a fictional first-visit daycare concept for anxious dogs in Iowa City, with patient introductions, clear expectations, and questions for owners.
+
+The experiment supplies frozen full BODY text, not live URLs, document titles, head metadata, browser-tab labels, or search snippets. Both supplied text files remain byte-identical. The current B BODY also remains byte-identical to its archived original. The sole difference between the A and B text inputs remains the preplanned H1. This is a technical search-metadata correction, not a change to the stimuli supplied to AI visitors. It does change the live browser-tab title; do not claim every live-page element or the entire HTML is unchanged.
+
+Version A, content, CSS, navigation, hypothesis, model/settings controls, prompt, assignments, sample size, outcome rule, and stopping rule are unchanged. No response was replaced or regenerated. B still has noindex, a canonical link to A, and no sitemap entry.
+
+The original HTML and text inputs are preserved unchanged with the experiment evidence. Original publication: https://github.com/colinchamberlin05/calm-canine-iowa-city/commit/0346ae899f58ec84e9bd3ede808e21f9a81ee57c
+Original A HTML SHA-256: b0dfa1e3895d3ccaf8885213f680ab0ac15aaa296f5cf1f64b7eca9d1f18e096
+Original B HTML SHA-256: 83f965c8922416dc9799ad348f5b5d11588750401b079a963866900f458694ae
+Revised B HTML SHA-256: 399e71e2b52c54f9a57cf6e6c18da01e36517af103a10991fa7dd88464f1a68e
+Unchanged A text SHA-256: 89d9e1d2d28be440c0cbeed3da1fe32a416930cbbf7bb9c61a868c98e1eac383
+Unchanged B text SHA-256: abfc0e99831f732b27a91dcefb8a3a99f9876020fdd7bc257d7fd7d29b41a6cd
+
+The original plan and the dated model-control amendment and interval-method clarification remain in the repository history. Their timestamps and earlier limitations are not rewritten. The metadata-repair publication commit supplies its actual publication time separately from this preparation record.
