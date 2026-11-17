@@ -1,0 +1,29 @@
+D3 interval-method clarification
+Recorded 2026-11-17 19:13:31 UTC.
+
+The original committed plan required a 95% interval for the B-minus-A difference but did not specify its construction. This clarification is recorded after 20 responses were collected and individual answers were visible, but before any aggregate outcome comparison or interval calculation using the experiment's data. Separate synthetic validation calculations do not use experimental outcomes. This algorithm was not specified in the original preregistration.
+
+At the fixed collection endpoint, use Newcombe (1998) Method 10: a hybrid of separate 95% Wilson score intervals, without continuity correction. Apply the same construction to the actual primary and sensitivity datasets and their actual arm denominators. Do not choose among interval methods based on results. This fills an unspecified reporting detail; it does not change assignments, eligibility, outcomes, stopping, the hypothesis, or the original two-sided Fisher exact test at alpha .05.
+
+For each arm i, let x_i be YES outcomes, n_i its completed denominator for the dataset being analyzed (primary or sensitivity), p_i=x_i/n_i, and z=1.959963984540054. The full-data sensitivity dataset retains trial 001 despite its primary exclusion. Require integer n_i>0 and integer 0<=x_i<=n_i.
+
+c_i = (p_i + z^2/(2*n_i)) / (1 + z^2/n_i)
+h_i = z*sqrt(p_i*(1-p_i)/n_i + z^2/(4*n_i^2)) / (1 + z^2/n_i)
+L_i = c_i-h_i; U_i = c_i+h_i
+
+For d=p_B-p_A:
+lower = d-sqrt((p_B-L_B)^2 + (U_A-p_A)^2)
+upper = d+sqrt((U_B-p_B)^2 + (p_A-L_A)^2)
+
+Multiply d and both limits by 100 to report percentage points. No pseudocounts or continuity correction are added. Correct only negligible floating-point excursions beyond mathematical bounds, not substantive results. Preserve the implementation and validate it with synthetic examples separately from the experiment's data.
+
+The interval is not an inversion of Fisher's test. If their conclusions differ, report that discrepancy without changing methods. Describe the interval as nominal and model-based: the binomial interpretation assumes independent trials and stable within-arm response probabilities. Fresh chats do not establish those assumptions for repeated AI outputs. Do not guarantee 95% coverage, human-customer validity, or real conversion effects.
+
+Sources checked November 17, 2026:
+Newcombe, R. G. (1998), Interval Estimation for the Difference Between Independent Proportions: Comparison of Eleven Methods, Statistics in Medicine 17:873-890, Method 10, printed p. 876.
+https://doi.org/10.1002/(SICI)1097-0258(19980430)17:8<873::AID-SIM779>3.0.CO;2-I
+Original paper copy: https://s3-us-west-2.amazonaws.com/misc.biblio/Newcombe98abOnWMWprobCI.pdf
+Official implementation, method="newcomb", compare="diff", alpha=.05, first sample B and second A:
+https://www.statsmodels.org/stable/_modules/statsmodels/stats/proportion.html#confint_proportions_2indep
+Assumptions and method documentation:
+https://www.statsmodels.org/stable/generated/statsmodels.stats.proportion.confint_proportions_2indep.html
