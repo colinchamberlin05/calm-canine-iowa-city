@@ -1,5 +1,5 @@
 trial_id,batch,scheduled_date,assigned_version,status
-001,1,2026-11-17,B,UNRUN
+001,1,2026-11-17,B,COMPLETED_MODEL_VERIFICATION_ISSUE
 002,1,2026-11-17,A,UNRUN
 003,1,2026-11-17,B,UNRUN
 004,1,2026-11-17,A,UNRUN
@@ -99,3 +99,5 @@ trial_id,batch,scheduled_date,assigned_version,status
 098,5,2026-11-21,B,UNRUN
 099,5,2026-11-21,B,UNRUN
 100,5,2026-11-21,A,UNRUN
+101,5,2026-11-21,B,UNRUN
+102,5,2026-11-21,A,UNRUN
